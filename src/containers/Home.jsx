@@ -1,5 +1,11 @@
-import React from 'react'
+import React from 'react';
+import initialState from '../../initialState';
+import Events from '../components/Events';
 
-const Home = () => <h1>Home</h1>
+
+
+const Home = () => (
+  <Events events={initialState.events} />
+)
 
 export default Home;
