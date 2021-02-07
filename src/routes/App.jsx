@@ -6,7 +6,8 @@ import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Contenedor from '../components/Contenedor';
 import theme from '../../temaConfig';
-import Navbar from '../components/Navbar';
+
+import Listas from '../components/Listas';
 
 const App = () =>
 // <BrowserRouter>
@@ -18,8 +19,9 @@ const App = () =>
 // </BrowserRouter>
 (
   <ThemeProvider theme={theme}>
-    <Navbar />
+    
     <Contenedor />
+    
   </ThemeProvider>
 )
 
