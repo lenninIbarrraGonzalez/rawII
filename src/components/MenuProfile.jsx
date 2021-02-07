@@ -5,16 +5,16 @@ import {
   ListItemIcon,
   ListItemText
 } from '@material-ui/core';
-import FaceIcon from '@material-ui/icons/Face';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
+import Avatar from '@material-ui/core/Avatar';
 
 const Listas = () => (
   <div>
     <List component='nav'>
-      <ListItem button>
+      <ListItem>
         <ListItemIcon>
-          <FaceIcon />
+          <Avatar alt="Lennin" src="../assets/avatares/avatarLenin.png" />
         </ListItemIcon>
         <ListItemText>
           Lennin Ibarra
