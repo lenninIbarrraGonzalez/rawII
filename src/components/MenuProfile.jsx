@@ -13,13 +13,13 @@ import api from '../../api'
 
 const Listas = () => {
   const [character, setCharacter] = useState({})
-  useEffect(() => {
-    async function getCharacter() {
-      setCharacter(await api.getCharacter(1))
-      console.log(character)
-    }
-    getCharacter()
-  }, [])
+  // useEffect(() => {
+  //   async function getCharacter() {
+  //     setCharacter(await api.getCharacter(1))
+  //     console.log(character)
+  //   }
+  //   getCharacter()
+  // }, [])
 
   return (
     <div>
