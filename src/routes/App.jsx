@@ -4,10 +4,11 @@ import React from 'react';
 // import WaitingRoom from '../containers/WaitingRoom';
 // import NotFound from '../containers/NotFound';
 import { ThemeProvider } from '@material-ui/core/styles';
-import Contenedor from '../components/Contenedor';
+
 import theme from '../../temaConfig';
 
-import Listas from '../components/Listas';
+
+import Drawers from '../components/Drawers';
 
 const App = () =>
 // <BrowserRouter>
@@ -19,9 +20,9 @@ const App = () =>
 // </BrowserRouter>
 (
   <ThemeProvider theme={theme}>
-    
-    <Contenedor />
-    
+
+    <Drawers />
+
   </ThemeProvider>
 )
 
