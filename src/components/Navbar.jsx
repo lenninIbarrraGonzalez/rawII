@@ -2,22 +2,26 @@ import React from 'react'
 import { AppBar, makeStyles, Toolbar, Typography } from '@material-ui/core';
 import MenuIcon from "@material-ui/icons/Menu";
 
+const drawerWidth = 240;
+
 const useStyles = makeStyles(theme => ({
-  offset: theme.mixins.toolbar,
   menuButton: {
     marginRight: theme.spacing(2),
   },
   title: {
     flexGrow: 1
-  }
-
+  },
+  appBar: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+  },
 }))
 
 const Navbar = () => {
   const classes = useStyles()
   return (
     <div>
-      <AppBar position="fixed" color="primary">
+      <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
           <MenuIcon
             aria-label="Menu"
@@ -34,7 +38,7 @@ const Navbar = () => {
           />
         </Toolbar>
       </AppBar>
-      <div className={classes.offset} />
+
     </div>
   )
 }

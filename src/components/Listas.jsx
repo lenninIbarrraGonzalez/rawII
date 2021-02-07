@@ -20,7 +20,7 @@ const Listas = () => (
           Lennin Ibarra
         </ListItemText>
       </ListItem>
-      <ListItem button>
+      <ListItem>
         <ListItemText>
           Edad: 39
         </ListItemText>
@@ -30,7 +30,7 @@ const Listas = () => (
           <EventAvailableIcon />
         </ListItemIcon>
         <ListItemText>
-          Catetgora de eventos
+          Categorias
         </ListItemText>
       </ListItem>
       <ListItem button>
