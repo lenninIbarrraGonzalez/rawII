@@ -4,10 +4,7 @@ import React from 'react';
 // import WaitingRoom from '../containers/WaitingRoom';
 // import NotFound from '../containers/NotFound';
 import { ThemeProvider } from '@material-ui/core/styles';
-
 import theme from '../../temaConfig';
-
-
 import Drawers from '../components/Drawers';
 
 const App = () =>
