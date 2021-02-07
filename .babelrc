@@ -3,12 +3,5 @@
       "@babel/env",
       "@babel/react"
   ]
-},
-
-{
-  "plugins": [
-    ["transform-runtime", {
-      "regenerator": true
-    }]
-  ]
 }
+
