@@ -12,6 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MenuProfile from './MenuProfile';
+import MenuCategories from './MenuCategories';
 
 const drawerWidth = 240;
 
@@ -210,7 +211,7 @@ export default function Drawers() {
           </IconButton>
         </div>
         <Divider />
-        <MenuProfile />
+        <MenuCategories />
       </Drawer>
     </div>
   );
