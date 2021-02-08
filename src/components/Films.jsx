@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -16,28 +15,30 @@ const useFetch = url => {
   useEffect(async () => {
     const response = await fetch(url);
     const data = await response.json();
-    const item = data.results;
+    console.log('data await', data)
+    const item = data;
+    console.log('item', item)
     setData(item);
   }, []);
 
   return { data };
 };
 
-function Friends() {
-  const { data } = useFetch("https://randomuser.me/api/?results=7");
+
+
+function Films() {
+  const { data } = useFetch("https://yts.mx/api/v2/list_movies.json");
   const classes = useStyles();
+  console.log('DATA', data?.data.movies)
+  const peliculas = data?.data.movies
   return (
     <div>
-
-      {data?.map((item) => (
-        <div className={classes.root}>
-          <Avatar alt="Remy Sharp" src={item.picture.medium} />
-          <h3>{item.name.first}</h3>
-
-        </div>
+      <h1>Pelicudas</h1>
+      {peliculas?.map((pelicula) => (
+        <h1>{pelicula.title_long}</h1>
       ))}
     </div>
   )
 }
 
-export default Friends
+export default Films
