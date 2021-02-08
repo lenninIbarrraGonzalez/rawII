@@ -1,11 +1,11 @@
 import React from 'react';
-import initialState from '../../initialState';
-import Events from '../components/Events';
-
-
+import BannerHome from '../components/BannerHome';
 
 const Home = () => (
-  <Events events={initialState.events} />
+  <>
+    <BannerHome />
+    <h1>Esto es el home</h1>
+  </>
 )
 
 export default Home;

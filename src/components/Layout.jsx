@@ -110,9 +110,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Drawers() {
+export default function Layout({ children }) {
   const classes = useStyles();
-  const theme = useTheme();
   const [openLeft, setOpenLeft] = React.useState(false);
   const [openRight, setOpenRight] = React.useState(false);
 
@@ -183,18 +182,13 @@ export default function Drawers() {
         <MenuProfile />
       </Drawer>
 
-
-
-
       <main
         className={clsx(classes.contentLeft, {
           [classes.contentShiftLeft]: openLeft,
         })}
       >
         <div className={classes.drawerHeaderLeft} />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        </Typography>
+        {children}
       </main>
       <Drawer
         className={classes.drawer}
