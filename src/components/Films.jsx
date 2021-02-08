@@ -16,14 +16,16 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '100%', // 16:9
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -66,69 +68,70 @@ function Films() {
   const peliculas = data?.data.movies
   return (
     <div>
+      <Grid container spacing={3}>
+        {peliculas?.map((pelicula) => (
+          <Grid item xs={3} key={pelicula.id}>
 
-      {peliculas?.map((pelicula) => (
-        <>
-          <Card className={classes.root}>
-            <CardHeader
-              avatar={(
-                <Avatar aria-label="recipe" className={classes.avatar}>
-                  L
-                </Avatar>
-              )}
-              action={(
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              )}
-              title={pelicula.title}
-              subheader={`Año de estreno ${pelicula.year}`}
-            />
-            <CardMedia
-              className={classes.media}
-              image={pelicula.medium_cover_image}
-              title="Paella dish"
-            />
-            <CardContent>
-              <Typography paragraph>
-                {pelicula.genres}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {pelicula.summary}
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-              </IconButton>
-              <IconButton aria-label="share">
-                <ShareIcon />
-              </IconButton>
-              <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded,
-                })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-              >
-                <ExpandMoreIcon />
-              </IconButton>
-              <Button size="small" color="primary">
-                ver evento
-              </Button>
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Card className={classes.root}>
+              <CardHeader
+                avatar={(
+                  <Avatar aria-label="recipe" className={classes.avatar}>
+                    L
+                  </Avatar>
+                )}
+                action={(
+                  <IconButton aria-label="settings">
+                    <MoreVertIcon />
+                  </IconButton>
+                )}
+                title={pelicula.title}
+                subheader={`Año de estreno ${pelicula.year}`}
+              />
+              <CardMedia
+                className={classes.media}
+                image={pelicula.medium_cover_image}
+                title="Paella dish"
+              />
               <CardContent>
-                <Typography paragraph>Synopsis:</Typography>
                 <Typography paragraph>
-                  {pelicula.synopsis}
+                  {pelicula.genres}
                 </Typography>
+
               </CardContent>
-            </Collapse>
-          </Card>
-        </>
-      ))}
+              <CardActions disableSpacing>
+                <IconButton aria-label="add to favorites">
+                  <FavoriteIcon />
+                </IconButton>
+                <IconButton aria-label="share">
+                  <ShareIcon />
+                </IconButton>
+                <IconButton
+                  className={clsx(classes.expand, {
+                    [classes.expandOpen]: expanded,
+                  })}
+                  onClick={handleExpandClick}
+                  aria-expanded={expanded}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+                <Button size="small" color="primary">
+                  ver evento
+                </Button>
+              </CardActions>
+              <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography paragraph>Synopsis:</Typography>
+                  <Typography paragraph>
+                    {pelicula.synopsis}
+                  </Typography>
+                </CardContent>
+              </Collapse>
+            </Card>
+
+          </Grid>
+        ))}
+      </Grid>
     </div>
 
   )
