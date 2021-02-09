@@ -7,6 +7,7 @@ import NotFound from '../containers/NotFound';
 import Home from '../containers/Home';
 import theme from '../../temaConfig';
 import Layout from '../components/Layout';
+import PageLogin from '../containers/PageLogin';
 
 const App = () =>
 
@@ -18,7 +19,7 @@ const App = () =>
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
-
+        <Route exact path="/login" component={PageLogin} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
