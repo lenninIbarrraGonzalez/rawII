@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, makeStyles, Toolbar, Typography, IconButton } from '@material-ui/core';
+import { AppBar, makeStyles, Toolbar, Typography, IconButton, Button } from '@material-ui/core';
 import MenuIcon from "@material-ui/icons/Menu";
 import clsx from 'clsx';
 
@@ -39,9 +39,9 @@ const Navbar = () => {
     setOpen(true);
   };
 
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  // const handleDrawerClose = () => {
+  //   setOpen(false);
+  // };
 
 
   return (
@@ -66,11 +66,14 @@ const Navbar = () => {
           <Typography variant="h6" className={classes.title}>
             RAVII
           </Typography>
-          <MenuIcon
+          <Button variant="contained" color="secondary">
+            Secondary
+          </Button>
+          {/* <MenuIcon
             aria-label="Menu"
             className={classes.menuButton}
           // onClick={() => actionOpen()}
-          />
+          /> */}
         </Toolbar>
       </AppBar>
 
