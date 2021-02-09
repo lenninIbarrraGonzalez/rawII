@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
 import { makeStyles } from '@material-ui/core/styles';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Animations from '../components/Animations';
+import '../styles/swiper.css';
+import 'swiper/swiper-bundle.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -76,8 +79,28 @@ const Waitingroom = (props) => {
       </Container>
     )
   }
+
+  const slides = [];
+  
+  for(let i = 0; i < 5; i += 1) {
+    slides.push(
+      <SwiperSlide key={`slide-${i}`}>
+        <img 
+          src='https://yts.mx/assets/images/movies/13_2010/large-cover.jpg'
+          alt={`Slide ${i}`}
+        />
+        
+      </SwiperSlide>
+    )
+  }
+
+
   return (
-    <h1>{pelicula.title}</h1>
+    <>
+      <Swiper id='main'>
+        {slides}
+      </Swiper>
+    </>
   )
 }
 
