@@ -5,7 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Controller, Thumbs, EffectCube } from 'swiper';
 import Animations from '../components/Animations';
-import '../styles/swiper.css';
+import Premiers from '../components/Premiers';
+import '../styles/containers/swiper.css';
 import 'swiper/swiper-bundle.css';
 
 SwiperCore.use([Navigation, Pagination, Thumbs, EffectCube]);
@@ -33,7 +34,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  image:{
+    width: 300,
+  height: 500,
   }
+
 }));
 
 const useFetch = url => {
@@ -59,16 +65,9 @@ const Waitingroom = (props) => {
   const classes = useStyles();
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-
-  console.log('Este es el id', id)
   const pelicula = data?.data.movie;
-  console.log('PELICULA', pelicula)
-
   const image1 = pelicula?.background_image;
-  console.log('IMAGNES !!!!',image1)
   const image2 = pelicula?.large_cover_image;
-  console.log('IMAGNES 22222',image2)
-  const mini = pelicula?.large_cover_image;
 
 
   const thumbs = [];
@@ -129,7 +128,7 @@ const Waitingroom = (props) => {
         </SwiperSlide>
         <SwiperSlide>
           <img 
-            src={image1}
+            src={image2}
             alt={pelicula.title}
           />
         
@@ -142,71 +141,9 @@ const Waitingroom = (props) => {
         </SwiperSlide>
       </Swiper>
       
-
-
-      <Swiper
-        id="thumbs"
-        // spaceBetween={1}
-        // slidesPerView={6}
-        // onSwiper={setThumbsSwiper}
-        effect='cube'
-      >
-        <SwiperSlide>
-          <img 
-            src={mini}
-            alt={pelicula.title}
-          />
-        
-        </SwiperSlide>
-        <SwiperSlide>
-          <img 
-            src={mini}
-            alt={pelicula.title}
-          />
-        
-        </SwiperSlide>
-        <SwiperSlide>
-          <img 
-            src={mini}
-            alt={pelicula.title}
-          />
-        
-        </SwiperSlide>
-        <SwiperSlide>
-          <img 
-            src={mini}
-            alt={pelicula.title}
-          />
-        
-        </SwiperSlide>
-        <SwiperSlide>
-          <img 
-            src={mini}
-            alt={pelicula.title}
-          />
-        
-        </SwiperSlide>
-        <SwiperSlide>
-          <img 
-            src={mini}
-            alt={pelicula.title}
-          />
-        
-        </SwiperSlide>
-      </Swiper>
-      {/* <Swiper
-        id="thumbs"
-        spaceBetween={2}
-        slidesPerView={4}
-        onSwiper={setThumbsSwiper}
-      >
-        {thumbs}
-      </Swiper> */}
-
+      <Premiers />
     </>
   )
 }
-
-
 
 export default Waitingroom;

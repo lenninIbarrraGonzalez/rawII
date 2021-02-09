@@ -1,6 +1,7 @@
 .swiper-container {
-  width: 800px;
+  width: 400px;
 }
+
 
 .swiper-pagination {
   bottom: 0;
@@ -9,4 +10,9 @@
 
 .swiper-wrapper {
   padding-inline-start: 0;
+}
+
+.image-cube{
+  width: 300;
+  height: 500;
 }
