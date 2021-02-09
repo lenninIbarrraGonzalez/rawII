@@ -4,13 +4,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import {
   Container,
   CssBaseline,
-  Avatar,
+  Paper,
   Typography,
   Divider,
   TextField,
-
   Button,
-  Paper,
+  Avatar,
 } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
@@ -22,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(8),
     marginTop: theme.spacing(2),
     [theme.breakpoints.up('sm')]: {
-      marginTop: theme.spacing(15),
+      marginTop: theme.spacing(30),
     },
   },
   avatar: {
@@ -33,19 +32,11 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: '100%',
-    marginTop: theme.spacing(2),
-  },
-  errorField: {
-    display: 'flex',
-    paddingLeft: theme.spacing(1),
-    alignItems: 'center',
-  },
-  errorIcon: {
-    marginRight: theme.spacing(1),
   },
 }));
 
-const PageLogin = () => {
+
+const RememberPass = () => {
   const classes = useStyles();
   return (
     <Container component='main' maxWidth='xs'>
@@ -55,30 +46,20 @@ const PageLogin = () => {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component='h1' variant='h5'>
+          <Typography variant='h5' component='h1'>
             RAVII
             <Divider />
           </Typography>
           <form className={classes.form}>
             <TextField
-              name='usuario'
-              id='usuario'
+              name='email'
+              id='email'
+              label='Correo electrónico'
               variant='outlined'
               margin='normal'
               fullWidth
               autoComplete='email'
               autoFocus
-              label='Correo electrónico'
-            />
-            <TextField
-              name='password'
-              id='password'
-              variant='outlined'
-              margin='normal'
-              fullWidth
-              label='Contraseña'
-              type='password'
-              autoComplete='current-password'
             />
             <Link to='/'>
               <Button
@@ -87,10 +68,10 @@ const PageLogin = () => {
                 fullWidth
                 type='submit'
               >
-                Ingresar
+                Recordar
               </Button>
             </Link>
-            <Link to='/remember'>¿olvidó su contrasaña?</Link>
+            <Link to='/login'>Cancelar</Link>
           </form>
         </div>
       </Paper>
@@ -98,4 +79,4 @@ const PageLogin = () => {
   );
 };
 
-export default PageLogin;
+export default RememberPass;
