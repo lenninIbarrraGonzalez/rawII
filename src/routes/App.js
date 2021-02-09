@@ -8,18 +8,18 @@ import Home from '../containers/Home';
 import theme from '../../temaConfig';
 import Layout from '../components/Layout';
 import PageLogin from '../containers/PageLogin';
+import RememberPass from '../containers/RememberPass';
 
 const App = () =>
 
 (
   <ThemeProvider theme={theme}>
-
     <Layout />
-
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={PageLogin} />
+        <Route exact path="/remember" component={RememberPass} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
