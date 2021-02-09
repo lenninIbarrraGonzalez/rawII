@@ -3,9 +3,12 @@ import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
 import { makeStyles } from '@material-ui/core/styles';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination, Controller, Thumbs, EffectCube } from 'swiper';
 import Animations from '../components/Animations';
 import '../styles/swiper.css';
 import 'swiper/swiper-bundle.css';
+
+SwiperCore.use([Navigation, Pagination, Thumbs, EffectCube]);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,10 +57,31 @@ const Waitingroom = (props) => {
   const { id } = props.match.params;
   const { data, loading } = useFetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`);
   const classes = useStyles();
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
 
   console.log('Este es el id', id)
   const pelicula = data?.data.movie;
   console.log('PELICULA', pelicula)
+
+  const image1 = pelicula?.background_image;
+  console.log('IMAGNES !!!!',image1)
+  const image2 = pelicula?.large_cover_image;
+  console.log('IMAGNES 22222',image2)
+  const mini = pelicula?.large_cover_image;
+
+
+  const thumbs = [];
+  for (let i = 0; i < 5; i += 1) {
+    thumbs.push(
+      <SwiperSlide key={`thumb-${i}`} tag="li" style={{ listStyle: 'none' }}>
+        <img
+          src={`https://picsum.photos/id/${i}/163/100`}
+          alt={`Thumbnail ${i}`}
+        />
+      </SwiperSlide>
+    );
+  }
 
   if (loading) {
     return (
@@ -80,26 +104,105 @@ const Waitingroom = (props) => {
     )
   }
 
-  const slides = [];
-  
-  for(let i = 0; i < 5; i += 1) {
-    slides.push(
-      <SwiperSlide key={`slide-${i}`}>
-        <img 
-          src='https://yts.mx/assets/images/movies/13_2010/large-cover.jpg'
-          alt={`Slide ${i}`}
-        />
-        
-      </SwiperSlide>
-    )
-  }
-
-
+ 
   return (
     <>
-      <Swiper id='main'>
-        {slides}
+      <Swiper
+        id='main'
+        thumbs={{ swiper: thumbsSwiper }}
+        navigation
+        pagination
+        spaceBetween={0}
+        slidesPerView={1}
+        onInit={(swiper) => console.log('Swiper initialized!', swiper)}
+        onSlideChange={(swiper) => {
+          console.log('Slide index changed to: ', swiper.activeIndex);
+        }}
+        onReachEnd={() => console.log('Swiper end reached')}
+      >
+        <SwiperSlide>
+          <img 
+            src={image2}
+            alt={pelicula.title}
+          />
+        
+        </SwiperSlide>
+        <SwiperSlide>
+          <img 
+            src={image1}
+            alt={pelicula.title}
+          />
+        
+        </SwiperSlide>
+        <SwiperSlide>
+          <img 
+            src={image2}
+            alt={pelicula.title}
+          />
+        </SwiperSlide>
       </Swiper>
+      
+
+
+      <Swiper
+        id="thumbs"
+        // spaceBetween={1}
+        // slidesPerView={6}
+        // onSwiper={setThumbsSwiper}
+        effect='cube'
+      >
+        <SwiperSlide>
+          <img 
+            src={mini}
+            alt={pelicula.title}
+          />
+        
+        </SwiperSlide>
+        <SwiperSlide>
+          <img 
+            src={mini}
+            alt={pelicula.title}
+          />
+        
+        </SwiperSlide>
+        <SwiperSlide>
+          <img 
+            src={mini}
+            alt={pelicula.title}
+          />
+        
+        </SwiperSlide>
+        <SwiperSlide>
+          <img 
+            src={mini}
+            alt={pelicula.title}
+          />
+        
+        </SwiperSlide>
+        <SwiperSlide>
+          <img 
+            src={mini}
+            alt={pelicula.title}
+          />
+        
+        </SwiperSlide>
+        <SwiperSlide>
+          <img 
+            src={mini}
+            alt={pelicula.title}
+          />
+        
+        </SwiperSlide>
+      </Swiper>
+      {/* <Swiper
+        id="thumbs"
+        spaceBetween={2}
+        slidesPerView={4}
+        onSwiper={setThumbsSwiper}
+      >
+        {thumbs}
+      </Swiper> */}
+
     </>
   )
 }
