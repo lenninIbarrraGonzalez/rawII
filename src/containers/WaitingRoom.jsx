@@ -8,6 +8,7 @@ import Animations from '../components/Animations';
 import Premiers from '../components/Premiers';
 import '../styles/containers/swiper.css';
 import 'swiper/swiper-bundle.css';
+import BottonBuy from '../components/BottonBuy';
 
 SwiperCore.use([Navigation, Pagination, Thumbs, EffectCube]);
 
@@ -38,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
   image:{
     width: 300,
   height: 500,
+  },
+  pointer: {
+    cursor: 'pointer'
   }
 
 }));
@@ -66,21 +70,8 @@ const Waitingroom = (props) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const pelicula = data?.data.movie;
-  const image1 = pelicula?.background_image;
   const image2 = pelicula?.large_cover_image;
 
-
-  const thumbs = [];
-  for (let i = 0; i < 5; i += 1) {
-    thumbs.push(
-      <SwiperSlide key={`thumb-${i}`} tag="li" style={{ listStyle: 'none' }}>
-        <img
-          src={`https://picsum.photos/id/${i}/163/100`}
-          alt={`Thumbnail ${i}`}
-        />
-      </SwiperSlide>
-    );
-  }
 
   if (loading) {
     return (
@@ -106,6 +97,7 @@ const Waitingroom = (props) => {
  
   return (
     <>
+      <BottonBuy />
       <Swiper
         id='main'
         thumbs={{ swiper: thumbsSwiper }}
@@ -118,6 +110,7 @@ const Waitingroom = (props) => {
           console.log('Slide index changed to: ', swiper.activeIndex);
         }}
         onReachEnd={() => console.log('Swiper end reached')}
+        className={classes.pointer}
       >
         <SwiperSlide>
           <img 
