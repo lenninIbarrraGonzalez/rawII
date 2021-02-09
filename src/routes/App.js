@@ -9,6 +9,7 @@ import theme from '../../temaConfig';
 import Layout from '../components/Layout';
 import PageLogin from '../containers/PageLogin';
 import RememberPass from '../containers/RememberPass';
+import WaitingRoom from '../containers/WaitingRoom'
 
 const App = () =>
 
@@ -18,6 +19,7 @@ const App = () =>
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/:id" component={WaitingRoom} />
         <Route exact path="/login" component={PageLogin} />
         <Route exact path="/remember" component={RememberPass} />
         <Route component={NotFound} />

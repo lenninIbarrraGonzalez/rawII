@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -80,7 +81,7 @@ function Films() {
   if (loading) {
     return (
       <Container className={classes.container}>
-        <Grid container spacing={3} >
+        <Grid container spacing={3}>
           <Grid item xs md={2} lg={3}>
             <Animations />
           </Grid>
@@ -88,7 +89,7 @@ function Films() {
             <Animations />
           </Grid>
           <Grid item xs md={2} lg={3}>
-            <Animations  />
+            <Animations />
           </Grid>
           <Grid item xs md={2} lg={3}>
             <Animations />
@@ -142,9 +143,12 @@ function Films() {
                 >
                   <ExpandMoreIcon />
                 </IconButton>
-                <Button size="small" color="primary">
-                  ver evento
-                </Button>
+                <Link to={`/${pelicula.id}`}>
+                  <Button size="small" color="primary">
+                    ver evento
+                  </Button>
+                </Link>
+
               </CardActions>
               <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
