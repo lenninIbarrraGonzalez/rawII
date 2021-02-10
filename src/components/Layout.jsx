@@ -154,9 +154,9 @@ const Layout = ({ children }) => {
           <Typography variant='h6' noWrap className={classes.title}>
             RAVII
           </Typography>
-          <Button variant="contained" color="secondary" href='/login'>
+          {/* <Button variant="contained" color="secondary" href='/login'>
             Login
-          </Button>
+          </Button> */}
           <IconButton
             color='inherit'
             aria-label='open drawer'
