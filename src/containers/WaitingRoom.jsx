@@ -10,6 +10,9 @@ import '../styles/containers/swiper.css';
 import 'swiper/swiper-bundle.css';
 import BottonBuy from '../components/BottonBuy';
 import Emogis from '../components/Emogis';
+import Timers from '../components/Timers';
+import Chat from '../components/Chat';
+
 
 SwiperCore.use([Navigation, Pagination, Thumbs, EffectCube]);
 
@@ -97,7 +100,7 @@ const Waitingroom = (props) => {
 
 
   return (
-    <>
+    <Container>
       <BottonBuy />
       <Swiper
         id='main'
@@ -134,9 +137,11 @@ const Waitingroom = (props) => {
           />
         </SwiperSlide>
       </Swiper>
+      <Timers />
       <Emogis />
       <Premiers />
-    </>
+      <Chat />
+    </Container>
   )
 }
 

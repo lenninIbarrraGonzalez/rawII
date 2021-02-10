@@ -7,7 +7,7 @@ const Home = () => (
   <>
     <Search />
     <BannerHome />
-    <h1>Esto es el home</h1>
+
     <Films />
   </>
 )
