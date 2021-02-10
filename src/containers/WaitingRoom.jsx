@@ -9,6 +9,7 @@ import Premiers from '../components/Premiers';
 import '../styles/containers/swiper.css';
 import 'swiper/swiper-bundle.css';
 import BottonBuy from '../components/BottonBuy';
+import Emogis from '../components/Emogis';
 
 SwiperCore.use([Navigation, Pagination, Thumbs, EffectCube]);
 
@@ -36,9 +37,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  image:{
+  image: {
     width: 300,
-  height: 500,
+    height: 500,
   },
   pointer: {
     cursor: 'pointer'
@@ -94,7 +95,7 @@ const Waitingroom = (props) => {
     )
   }
 
- 
+
   return (
     <>
       <BottonBuy />
@@ -113,27 +114,27 @@ const Waitingroom = (props) => {
         className={classes.pointer}
       >
         <SwiperSlide>
-          <img 
+          <img
             src={image2}
             alt={pelicula.title}
           />
-        
+
         </SwiperSlide>
         <SwiperSlide>
-          <img 
+          <img
             src={image2}
             alt={pelicula.title}
           />
-        
+
         </SwiperSlide>
         <SwiperSlide>
-          <img 
+          <img
             src={image2}
             alt={pelicula.title}
           />
         </SwiperSlide>
       </Swiper>
-      
+      <Emogis />
       <Premiers />
     </>
   )
