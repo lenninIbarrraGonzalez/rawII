@@ -34,7 +34,7 @@ _Luego ejecuta npm start_
 
 Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](https://wikis.fdi.ucm.es/ELP/Licencia_MIT) para detalles
 
-## En la pagina de Home encontra un llamado a una api para obtener las peliculas
-## En la pagina de la sala de espera se implemento el contorl de gestos de swipe, podra probarlo con el deslizado el mouse, por algunas limitantes de la api se tuvo 
-## que hacer uso de la misma imagen para hacer la transición
+ En la pagina de Home encontra un llamado a una api para obtener las peliculas
+ En la pagina de la sala de espera se implemento el contorl de gestos de swipe, podra probarlo con el deslizado el mouse, por algunas limitantes de la api se tuvo 
+ que hacer uso de la misma imagen para hacer la transición
 
