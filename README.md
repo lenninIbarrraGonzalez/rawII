@@ -1,4 +1,4 @@
-# Prueba de conocimientos Web - Vúho
+# Web - Vúho
 
 _proyecto realizado en React JS_
 
@@ -37,4 +37,6 @@ Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](https://wik
  En la pagina de Home encontra un llamado a una api para obtener las peliculas
  En la pagina de la sala de espera se implemento el contorl de gestos de swipe, podra probarlo con el deslizado el mouse, por algunas limitantes de la api se tuvo 
  que hacer uso de la misma imagen para hacer la transición
-
+ 
+ ![alt text](https://github.com/lenninIbarrraGonzalez/rawII/blob/main/image.png)
+ ![alt text](https://github.com/lenninIbarrraGonzalez/rawII/blob/main/imagen2.png)
